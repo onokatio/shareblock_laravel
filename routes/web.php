@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('auth/twitter', 'Auth\SocialAuthController@redirectToProvider');
+Route::get('auth/twitter/callback', 'Auth\SocialAuthController@handleProviderCallback');
+Route::get('auth/twitter/logout', 'Auth\SocialAuthController@logout');
